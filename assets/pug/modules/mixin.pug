@@ -1,0 +1,101 @@
+mixin entry(img, title, group, description, action, date, actionFull)
+    if actionFull
+        a.entry-item.entry-item--actionfull(href="#")
+            if img
+                .entry-item__image
+                    img.image(src=img)
+            .entry-item__content
+                if title
+                    .entry-item__title
+                        .title=title
+                if date
+                    .entry-item__date
+                        .date=date
+                if group
+                    .entry-item__group
+                        .group=group
+                if description
+                    .entry-item__description
+                        .description=description
+            if action
+                .entry-item__actions
+                    .entry-item__action
+                         a.btn.action ПОДРОБНЕЕ
+    else
+        .entry-item
+            if img
+                .entry-item__image
+                    img.image(src=img)
+            if title || date || group || description
+                .entry-item__content
+                    if title
+                     .entry-item__title
+                         a.title(href="#")=title
+                    if date
+                         .entry-item__date
+                             .date=date
+                    if group
+                        .entry-item__group
+                            .group=group
+                    if description
+                        .entry-item__description
+                            .description=description
+            if action
+                .entry-item__actions
+                    .entry-item__action
+                        a.btn.action(href="#") ПОДРОБНЕЕ
+
+mixin card-course(img, title, caption, action)
+    .card-course
+        a.card-course__wrapper(href="#")
+            .card-course__img-box
+                img.card-course__img(src=img)
+            .card-course__description
+                .title=title
+                .caption=caption
+        if action
+            .card-course__footer
+                a.btn(href="#") Подробнее
+
+
+
+
+mixin headpage(img, title, pretitle, classhead)
+    .head-page(class='head-page--'+classhead)
+        .head-page__bg
+            .back-wrapper.wrapper
+                a.back.back-white.action(href="#")
+                    span Назад
+            img.image(src='/assets/img/bg.jpg')
+        .head-page__wrapper.wrapper
+            .head-page__content
+                .head-page__title
+                    h1.title=title
+                .head-page__pretitle=pretitle
+
+mixin instructor(size, image)
+    if (size)
+        .instructor(class='instructor-size--'+size)
+            .instructor__wrapper
+                .instructor__image
+                    img.image(src=image)
+                .instructor__info
+                    .rate Ведущий инструктор
+                    .name Докиенко Виталий
+    else
+        .instructor
+            .instructor__wrapper
+                .instructor__image
+                    img.image(src="https://via.placeholder.com/56x56")
+                .instructor__info
+                    .rate Ведущий инструктор
+                    .name Докиенко Виталий
+mixin actionDown(white)
+    if (white)
+        .back-wrapper.wrapper
+            a.back.action.back-white(href="#")
+                span НАЗАД
+    else
+        .back-wrapper.wrapper
+            a.back.action(href="#")
+                span НАЗАД

@@ -1,0 +1,27 @@
+extends assets/pug/base
+block  content
+    body.page-owner
+        main
+            .header
+                .wrapper
+                    .logo-block
+                        img.logo(src="assets/img/logo-white.png")
+            .list-action-owner.wrapper
+                ul.list-action
+                    li.list-action__item
+                        a(href="#") БИОГРАФИЯ
+                    li.list-action__item
+                        a(href="#") 1-Й ПОЛЁТ
+                    li.list-action__item
+                        a(href="#") 2-Й ПОЛЁТ
+                    li.list-action__item
+                        a(href="#") 2-Й ЖЕНСКИЙ ОТРЯД КОСМОНАВТОВ 2
+            .person-info-owner.wrapper--info.wrapper
+                .person-info
+                    .person-info__owner
+                        .person-info__image
+                            img(src="./assets/person2.jpg")
+                        .person-info__info
+                            h2.name Савицкая Светлана Евгеньевна
+                            p Лётчик-космонавт СССР<br>Дважды Герой Советского Союза<br>Первая в мире женщина, совершившая выход в открытый космос
+                            .date 25 июля 1984г.
