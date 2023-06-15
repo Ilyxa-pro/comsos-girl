@@ -1,11 +1,12 @@
 extends assets/pug/base
 block  content
     body.page-owner
-        main
+        main.person3bg
             .header
                 .wrapper
                     .logo-block
-                        img.logo(src="assets/img/logo-white.png")
+                        a(href="#")
+                            img.logo(src="../assets/img/logo-white.png")
             .list-action-owner.wrapper
                 ul.list-action
                     li.list-action__item
@@ -16,8 +17,8 @@ block  content
                 .person-info
                     .person-info__owner
                         .person-info__image
-                            img(src="./assets/person3.jpg")
+                            img(src="../assets/img/person-detail-3.jpg")
                         .person-info__info
-                            h2.name Кондакова Елена Владимировна
+                            h2.name <span>Кондакова</span> <span>Елена</span> <span>Владимировна</span>
                             p Лётчик-космонавт<br> Российской Федерации<br>Герой Российской Федерации<br>Первая в мире женщина, совершившая<br>длительный космический полёт<br>продолжительностью 169 суток
                             .date 4 октября 1994г.<br>22 марта 1995 г

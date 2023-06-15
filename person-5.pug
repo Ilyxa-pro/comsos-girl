@@ -1,11 +1,12 @@
 extends assets/pug/base
 block  content
     body.page-owner
-        main
+        main.person5bg
             .header
                 .wrapper
                     .logo-block
-                        img.logo(src="assets/img/logo-white.png")
+                        a(href="#")
+                            img.logo(src="../assets/img/logo-white.png")
             .list-action-owner.wrapper
                 ul.list-action
                     li.list-action__item
@@ -16,8 +17,8 @@ block  content
                 .person-info
                     .person-info__owner
                         .person-info__image
-                            img(src="./assets/person5.jpg")
+                            img(src="../assets/img/person-detail-5.jpg")
                         .person-info__info
-                            h2.name Серова Елена Олеговна
+                            h2.name <span>Кикина</span> <span>Анна</span> <span>Юрьевна</span>
                             p Космонавт-испытатель<br>Единственная в данный момент женщина в отряде космонавтов Стартовала на Международную космическую станцию в составе экипажа корабля Crew Dragon
                             .date 5 октября 2022 г. – 12 марта 2023 г.

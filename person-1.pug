@@ -1,11 +1,12 @@
 extends assets/pug/base
 block  content
-    body.page-owner
-        main
+    body.page-person
+        main.person1bg
             .header
                 .wrapper
                     .logo-block
-                        img.logo(src="assets/img/logo-white.png")
+                        a(href="#")
+                            img.logo(src="../assets/img/logo-white.png")
             .list-action-owner.wrapper
                 ul.list-action
                     li.list-action__item
@@ -22,8 +23,8 @@ block  content
                 .person-info
                     .person-info__owner
                         .person-info__image
-                            img(src="./assets/person1.jpg")
+                            img(src="../assets/img/person-detail-1.jpg")
                         .person-info__info
-                            h2.name Терешкова Валентина Владимировна
+                            h2.name <span>Терешкова</span> <span>Валентина</span> <span>Владимировна</span>
                             p Лётчик-космонавт СССР<br>Герой СоветЦского Союза<br>Первая в мире женщина, совершившая космический полёт
                             .date 16–19 июня 1963 г.

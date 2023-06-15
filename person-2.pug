@@ -1,11 +1,12 @@
 extends assets/pug/base
 block  content
     body.page-owner
-        main
+        main.person2bg
             .header
                 .wrapper
                     .logo-block
-                        img.logo(src="assets/img/logo-white.png")
+                        a(href="#")
+                            img.logo(src="../assets/img/logo-white.png")
             .list-action-owner.wrapper
                 ul.list-action
                     li.list-action__item
@@ -20,8 +21,8 @@ block  content
                 .person-info
                     .person-info__owner
                         .person-info__image
-                            img(src="./assets/person2.jpg")
+                            img(src="../assets/img/person-detail-2.jpg")
                         .person-info__info
-                            h2.name Савицкая Светлана Евгеньевна
+                            h2.name <span>Савицкая</span> <span>Светлана</span> <span>Евгеньевна</span>
                             p Лётчик-космонавт СССР<br>Дважды Герой Советского Союза<br>Первая в мире женщина, совершившая выход в открытый космос
                             .date 25 июля 1984г.
