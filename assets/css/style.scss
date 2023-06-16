@@ -149,6 +149,7 @@ ul {
 
 
 @import "modules/dropdown";
+@import "modules/menu";
 
 .wrapper {
   margin: 0 auto;
@@ -161,11 +162,24 @@ ul {
 .header {
   padding-top: 115px;
   margin-bottom: 70px;
+  @media (max-width: 1024px) {
+    padding-top: 40px;
+  }
   .wrapper {
+    font-size: 0;
     max-width: 1680px;
+    .logo {
+      max-width: 340px;
+      @media (max-width: 480px) {
+        max-width: 200px;
+      }
+    }
   }
 }
+.list-action {
 
+}
+@media (min-width: 901px) {
 .list-action {
   display: flex;
   align-items: center;
@@ -178,28 +192,29 @@ ul {
   &-owner.wrapper {
     max-width: 1680px;
   }
-  &__item {
-    margin: 20px 0 0 0;
-    padding-left: 20px;
-    display: block;
-    a {
-      background-color: #fff;
-      text-decoration: none;
-      font-family: "Roboto", sans-serif;
-      font-size: 16px;
-      line-height: 46px;
-      font-weight: bold;
-      padding: 0 24px;
-      border-radius: 50px;
-      display: inline-block;
-      vertical-align: top;
-      border: 2px solid rgb(224, 9, 109);
-      color: #000;
-      &:hover {
+    &__item {
+      margin: 20px 0 0 0;
+      padding-left: 20px;
+      display: block;
+      a {
+        background-color: #fff;
         text-decoration: none;
-        border-color: #fff;
-        background-color: rgb(224, 9, 109);
-        color: #fff;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        line-height: 46px;
+        font-weight: bold;
+        padding: 0 24px;
+        border-radius: 50px;
+        display: inline-block;
+        vertical-align: top;
+        border: 2px solid rgb(224, 9, 109);
+        color: #000;
+        &:hover {
+          text-decoration: none;
+          border-color: #fff;
+          background-color: rgb(224, 9, 109);
+          color: #fff;
+        }
       }
     }
   }
@@ -272,6 +287,8 @@ ul {
 
 
 main {
+  padding-bottom: 40px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -308,6 +325,10 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url('../img/background-cosmos.jpg');
+  padding-bottom: 0;
+  @media (max-width: 660px) {
+    background-image: url("../img/background-cosmos-mobile.jpg");
+  }
   .header {
     padding-top: 75px;
   }
@@ -383,7 +404,10 @@ main {
       color: #fff;
       font-size: 20px;
       line-height: 1.25;
-      padding: 12.5px 30px;
+      padding: 12.5px 0;
+      @media (min-width: 1576px) {
+        padding: 12.5px 30px;
+      }
     }
   }
 }
@@ -395,8 +419,38 @@ main {
     display: none;
   }
 }
+
 @media (max-width: 900px) {
   .list-action {
-    display: none;
+    left: 0;
+    right: 0;
+    top: 140px;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    &__item {
+      display: block;
+      color: #fff;
+      padding: 0;
+      a {
+        font-weight: bold;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        line-height: 46px;
+        color: #fff;
+      }
+      &+.list-action__item {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .header .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }

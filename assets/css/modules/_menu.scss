@@ -1,0 +1,121 @@
+@media (max-width: 900px) {
+
+  main {
+    position: relative;
+    overflow-x: hidden;
+    &::before, &::after {
+      content: "";
+      width: 100%;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      background-color: #000;
+      opacity: .8;
+    }
+    &::after {
+      right: -100vw;
+    }
+    &::before {
+      display: none;
+      left: -100vw;
+      transition: left .5s linear;
+    }
+  }
+
+  body.openMenu {
+    overflow: hidden;
+    main {
+      &::after {
+        right: 0;
+      }
+      /*&::before {
+        left: -0;
+      }*/
+    }
+    .menu {
+      &-switch {
+        span {
+          opacity: 0;
+        }
+        &::after, &::before {
+          background-color: #fff;
+          top: 12px
+        }
+        &::after {
+          transform: rotate(45deg);
+        }
+        &::before {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    .list-action-owner {
+      position: fixed;
+      z-index: 3;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      align-content: center;
+    }
+    .list-action {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      display: block;
+      margin: 0;
+      padding: 0 15px;
+      opacity: 1;
+      visibility: visible;
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.menu-switch {
+  display: none;
+  height: 28px;
+  width: 40px;
+  position: fixed;
+  cursor: pointer;
+  z-index: 5;
+  right: 15px;
+  top: 50px;
+  align-items: center;
+  span {
+    display: block;
+    height: 4px;
+    background: #023445;
+    width: 100%;
+    opacity: 1;
+    transition: opacity .2s linear;
+  }
+  &::after, &::before {
+    content: "";
+    background-color: rgb(2, 52, 69);
+    width: 40px;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    transition: transform .4s linear, top .4s linear, background-color .4s linear ;
+  }
+  &::before {
+    top: 0;
+  }
+  &::after {
+    top: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .menu-switch {
+    display: flex;
+  }
+}
